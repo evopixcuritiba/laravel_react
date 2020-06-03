@@ -69878,7 +69878,7 @@ module.exports = function(module) {
  */
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
-Echo["private"]('push-test').listen('PushTest', function (e) {
+Echo["private"]('demo-channel').listen('PushTest', function (e) {
   console.log(e);
 });
 /**

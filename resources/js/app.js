@@ -7,7 +7,7 @@
 require('./bootstrap');
 
 
-Echo.private('push-test')
+Echo.private('demo-channel')
     .listen('PushTest', (e) => {
         console.log(e)
     });

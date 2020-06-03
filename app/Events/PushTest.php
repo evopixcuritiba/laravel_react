@@ -34,6 +34,6 @@ class PushTest implements ShouldBroadcast
      */
     public function broadcastOn()
     {
-        return new PrivateChannel('push-test');
+        return new PrivateChannel('demo-channel');
     }
 }

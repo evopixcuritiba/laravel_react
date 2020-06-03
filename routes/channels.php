@@ -18,6 +18,6 @@ Broadcast::channel('App.User.{id}', function ($user, $id) {
     return (int) $user->id === (int) $id;
 });
 
-Broadcast::channel('push-test', function ($user) {
+Broadcast::channel('demo-channel', function ($user) {
     return Auth::check();
 });
