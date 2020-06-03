@@ -1,7 +1,7 @@
 {
-    "name": "laravel/laravel",
+    "name": "evopixcuritiba/laravel_react",
     "type": "project",
-    "description": "The Laravel Framework.",
+    "description": "Boilerplate laravel 7 + reactJS + React Router Dom.",
     "keywords": [
         "framework",
         "laravel"
@@ -47,7 +47,7 @@
             "Tests\\": "tests/"
         }
     },
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "prefer-stable": true,
     "scripts": {
         "post-autoload-dump": [
