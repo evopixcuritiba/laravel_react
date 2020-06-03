@@ -69877,15 +69877,12 @@ module.exports = function(module) {
  * building robust, powerful web applications using React + Laravel.
  */
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
-
-Echo["private"]('demo-channel').listen('PushTest', function (e) {
-  console.log(e);
-});
 /**
  * Next, we will create a fresh React component instance and attach it to
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
+
 
 __webpack_require__(/*! ./react_index */ "./resources/js/react_index.js");
 
@@ -70043,6 +70040,15 @@ __webpack_require__.r(__webpack_exports__);
 
 var LazyApp = /*#__PURE__*/Object(react__WEBPACK_IMPORTED_MODULE_0__["lazy"])(function () {
   return Promise.all(/*! import() */[__webpack_require__.e(1), __webpack_require__.e(2)]).then(__webpack_require__.bind(null, /*! ./react_app */ "./resources/js/react_app.js"));
+});
+Echo.join('demo-channel').here(function (users) {
+  console.log('here:', users);
+}).leaving(function (user) {
+  console.log('leaving:', user);
+}).joining(function (user) {
+  console.log('joining:', user);
+}).listen('PushTest', function (e) {
+  console.log(e);
 });
 
 if (document.getElementById('root')) {

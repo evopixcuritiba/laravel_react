@@ -7,6 +7,7 @@ export default function Home(){
     const [user, setUser] = useState([])
 
     useEffect(() => {
+
         async function loadUser() {
             const response = await api.get('/teste')
             if(response.data){
