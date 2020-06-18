@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 
 import Spinner from './components/spinner'
 
-import Layout from './components/layout'
+import {Layout} from './components/context/layout_context'
 
 const LazyApp = lazy(() => import("./react_app"))
 

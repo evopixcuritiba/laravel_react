@@ -1,9 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
 @import '~bootstrap/scss/bootstrap';
 
 html, body, #root {
     height: 100% !important;
+    font-family: 'Nunito', sans-serif;
+    font-size: 16px;
 }
 
 body.login-page {
-    background-color: #333;
+    background-image: url("../assets/images/dot-grid.png");
+    background-repeat: repeat;
 }
