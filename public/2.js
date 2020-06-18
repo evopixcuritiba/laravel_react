@@ -57,12 +57,12 @@ function AppRouter() {
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(AppRoute, {
     path: "/login",
     component: /*#__PURE__*/Object(react__WEBPACK_IMPORTED_MODULE_0__["lazy"])(function () {
-      return __webpack_require__.e(/*! import() */ 3).then(__webpack_require__.bind(null, /*! ./src/pages/login */ "./resources/js/src/pages/login/index.js"));
+      return Promise.all(/*! import() */[__webpack_require__.e(3), __webpack_require__.e(7)]).then(__webpack_require__.bind(null, /*! ./src/pages/login */ "./resources/js/src/pages/login/index.js"));
     })
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(AppRoute, {
     path: "*",
     component: /*#__PURE__*/Object(react__WEBPACK_IMPORTED_MODULE_0__["lazy"])(function () {
-      return __webpack_require__.e(/*! import() */ 5).then(__webpack_require__.bind(null, /*! ./src/pages/404 */ "./resources/js/src/pages/404/index.js"));
+      return Promise.all(/*! import() */[__webpack_require__.e(5), __webpack_require__.e(6)]).then(__webpack_require__.bind(null, /*! ./src/pages/404 */ "./resources/js/src/pages/404/index.js"));
     })
   })));
 }
