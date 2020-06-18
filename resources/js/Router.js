@@ -34,6 +34,14 @@ export default function AppRouter(){
                     () => import('./src/pages/page2')
                 )}
                 />
+                <AppRoute path="/login" component={lazy(
+                    () => import('./src/pages/login')
+                )}
+                />
+                <AppRoute path="*" component={lazy(
+                    () => import('./src/pages/404')
+                )}
+                />
             </Switch>
         </Router>
     )

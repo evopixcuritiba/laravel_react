@@ -7,7 +7,9 @@ import Layout from './components/layout'
 
 const LazyApp = lazy(() => import("./react_app"))
 
-Echo.join('demo-channel')
+import "./src/styles/global.scss"
+
+/*Echo.join('demo-channel')
     .here((users) => {
         console.log('here:', users)
     })
@@ -19,7 +21,7 @@ Echo.join('demo-channel')
     })
     .listen('PushTest', (e) => {
         console.log(e)
-    });
+    });*/
 
 if (document.getElementById('root')) {
     ReactDOM.render(

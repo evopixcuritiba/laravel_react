@@ -47,12 +47,22 @@ function AppRouter() {
     exact: true,
     path: "/",
     component: /*#__PURE__*/Object(react__WEBPACK_IMPORTED_MODULE_0__["lazy"])(function () {
-      return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(3)]).then(__webpack_require__.bind(null, /*! ./src/pages/home */ "./resources/js/src/pages/home/index.js"));
+      return __webpack_require__.e(/*! import() */ 0).then(__webpack_require__.bind(null, /*! ./src/pages/home */ "./resources/js/src/pages/home/index.js"));
     })
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(AppRoute, {
     path: "/page2",
     component: /*#__PURE__*/Object(react__WEBPACK_IMPORTED_MODULE_0__["lazy"])(function () {
       return __webpack_require__.e(/*! import() */ 4).then(__webpack_require__.bind(null, /*! ./src/pages/page2 */ "./resources/js/src/pages/page2/index.js"));
+    })
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(AppRoute, {
+    path: "/login",
+    component: /*#__PURE__*/Object(react__WEBPACK_IMPORTED_MODULE_0__["lazy"])(function () {
+      return __webpack_require__.e(/*! import() */ 3).then(__webpack_require__.bind(null, /*! ./src/pages/login */ "./resources/js/src/pages/login/index.js"));
+    })
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(AppRoute, {
+    path: "*",
+    component: /*#__PURE__*/Object(react__WEBPACK_IMPORTED_MODULE_0__["lazy"])(function () {
+      return __webpack_require__.e(/*! import() */ 5).then(__webpack_require__.bind(null, /*! ./src/pages/404 */ "./resources/js/src/pages/404/index.js"));
     })
   })));
 }
