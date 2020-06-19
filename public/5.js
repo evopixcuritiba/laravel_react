@@ -27,6 +27,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_bodymovin__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_bodymovin__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _components_animations_404_json__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../components/animations/404.json */ "./resources/js/components/animations/404.json");
 var _components_animations_404_json__WEBPACK_IMPORTED_MODULE_2___namespace = /*#__PURE__*/__webpack_require__.t(/*! ../../../components/animations/404.json */ "./resources/js/components/animations/404.json", 1);
+/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! reactstrap */ "./node_modules/reactstrap/es/index.js");
+
 
 
 
@@ -37,9 +39,15 @@ function Page404() {
     prerender: true,
     animationData: _components_animations_404_json__WEBPACK_IMPORTED_MODULE_2__
   };
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bodymovin__WEBPACK_IMPORTED_MODULE_1___default.a, {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_3__["Container"], {
+    className: 'h-100'
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_3__["Row"], {
+    className: 'h-100 justify-content-center align-items-center'
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_3__["Col"], {
+    md: 6
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bodymovin__WEBPACK_IMPORTED_MODULE_1___default.a, {
     options: bodyMovieOptions
-  }));
+  }))));
 }
 
 /***/ })

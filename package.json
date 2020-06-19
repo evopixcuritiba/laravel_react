@@ -27,6 +27,10 @@
         "sass-loader": "^8.0.0"
     },
     "dependencies": {
+        "@fortawesome/fontawesome-svg-core": "^1.2.29",
+        "@fortawesome/free-solid-svg-icons": "^5.13.1",
+        "@fortawesome/react-fontawesome": "^0.1.11",
+        "classnames": "^2.2.6",
         "history": "^4.10.1",
         "laravel-echo": "^1.8.0",
         "pusher-js": "^6.0.3",
