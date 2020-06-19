@@ -3,8 +3,9 @@ import {
     faImage
 } from "@fortawesome/free-solid-svg-icons"
 
+export const subtitle = "by Evopix"
 
-const menus = [
+const menuconfig = [
     {
         type: 'nav',
         route: '/',
@@ -43,4 +44,4 @@ const menus = [
     }
 ]
 
-export default menus
+export default menuconfig

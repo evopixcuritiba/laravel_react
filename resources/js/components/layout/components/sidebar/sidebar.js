@@ -1,7 +1,7 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
-import menus from '../../../../src/configs/side_menu'
+import menuconfig, {subtitle} from '../../../../src/configs/side_menu'
 
 import {
     NavItem,
@@ -27,8 +27,8 @@ export default function SideBar({ isOpen, toggle }){
             </div>
             <div className="side-menu">
                 <Nav vertical className="list-unstyled pb-3">
-                    <p>Versão 123456.carmem</p>
-                    {menus.map((m, index) => {
+                    <p>{subtitle}</p>
+                    {menuconfig.map((m, index) => {
                         if(m.type === "nav"){
                             return (
                                 <NavItem key={index}>
