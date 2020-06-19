@@ -19,4 +19,13 @@ class AuthController extends Controller
                 ->header('Content-Type', 'application/json');
         }
     }
+
+    public function logout(){
+        try{
+            Auth::logout();
+        }catch (\Exception $exception){
+            return response($exception->getMessage(), 400)
+                ->header('Content-Type', 'application/json');
+        }
+    }
 }

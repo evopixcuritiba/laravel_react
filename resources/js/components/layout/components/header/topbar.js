@@ -64,8 +64,8 @@ export default function Topbar({ toggleSidebar }){
                                 Option 2
                             </DropdownItem>
                             <DropdownItem divider />
-                            <DropdownItem>
-                                Reset
+                            <DropdownItem onClick={() => auth.logout()}>
+                                Sair
                             </DropdownItem>
                         </DropdownMenu>
                     </UncontrolledDropdown>

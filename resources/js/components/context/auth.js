@@ -17,7 +17,6 @@ export default function AuthContextProvider({children}){
             window.location.reload()
         }).catch(error => {
             toast.error(`Atenção: ${error.response.data}`)
-        }).then(() => {
             setIsLoggin(false)
         })
     }
@@ -26,12 +25,19 @@ export default function AuthContextProvider({children}){
     }
 
     async function logout(){
+        await api.post('/auth/logout')
+            .then(() => {
+                window.location.reload()
+            }).catch(() => {
+                toast.error('Erro ao efetuar logout')
+            })
     }
 
     let obj = {
         user,
         isLoggin,
-        login
+        login,
+        logout
     }
 
     return (
