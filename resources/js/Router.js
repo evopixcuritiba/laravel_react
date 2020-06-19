@@ -1,11 +1,9 @@
-import React, {Suspense, lazy} from 'react'
+import React, {lazy} from 'react'
 import {Router, Switch, Route} from 'react-router-dom'
 import { history } from './src/services/history'
 
 import FullPageLayout from './components/layout/full_layout'
 import DefaultLayout from './components/layout/default_layout'
-
-import Spinner from './components/spinner'
 
 const AppRoute = ({
     component: Component,
@@ -21,9 +19,7 @@ const AppRoute = ({
                     ? FullPageLayout : DefaultLayout
             return (
                 <SwitchLayout {...props}>
-                    <Suspense fallback={<Spinner />}>
-                        <Component {...props} />
-                    </Suspense>
+                    <Component {...props} />
                 </SwitchLayout>
             )
         }}

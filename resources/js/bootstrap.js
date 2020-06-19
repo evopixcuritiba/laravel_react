@@ -38,3 +38,17 @@ window.Echo = new Echo({
      cluster: process.env.MIX_PUSHER_APP_CLUSTER,
      forceTLS: true
  });*/
+
+/*Echo.join('demo-channel')
+    .here((users) => {
+        console.log('here:', users)
+    })
+    .leaving((user) => {
+        console.log('leaving:', user)
+    })
+    .joining((user) => {
+        console.log('joining:', user)
+    })
+    .listen('PushTest', (e) => {
+        console.log(e)
+    });*/
