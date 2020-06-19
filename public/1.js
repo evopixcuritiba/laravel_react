@@ -54,24 +54,24 @@ function AppRouter() {
     exact: true,
     path: "/",
     component: /*#__PURE__*/Object(react__WEBPACK_IMPORTED_MODULE_0__["lazy"])(function () {
-      return __webpack_require__.e(/*! import() */ 6).then(__webpack_require__.bind(null, /*! ./src/pages/home */ "./resources/js/src/pages/home/index.js"));
+      return __webpack_require__.e(/*! import() */ 3).then(__webpack_require__.bind(null, /*! ./src/pages/home */ "./resources/js/src/pages/home/index.js"));
     })
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(AppRoute, {
     path: "/page2",
     component: /*#__PURE__*/Object(react__WEBPACK_IMPORTED_MODULE_0__["lazy"])(function () {
-      return __webpack_require__.e(/*! import() */ 7).then(__webpack_require__.bind(null, /*! ./src/pages/page2 */ "./resources/js/src/pages/page2/index.js"));
+      return __webpack_require__.e(/*! import() */ 6).then(__webpack_require__.bind(null, /*! ./src/pages/page2 */ "./resources/js/src/pages/page2/index.js"));
     })
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(AppRoute, {
     fullLayout: true,
     path: "/login",
     component: /*#__PURE__*/Object(react__WEBPACK_IMPORTED_MODULE_0__["lazy"])(function () {
-      return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(4)]).then(__webpack_require__.bind(null, /*! ./src/pages/login */ "./resources/js/src/pages/login/index.js"));
+      return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(2)]).then(__webpack_require__.bind(null, /*! ./src/pages/login */ "./resources/js/src/pages/login/index.js"));
     })
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(AppRoute, {
     fullLayout: true,
     path: "/forgot",
     component: /*#__PURE__*/Object(react__WEBPACK_IMPORTED_MODULE_0__["lazy"])(function () {
-      return __webpack_require__.e(/*! import() */ 10).then(__webpack_require__.bind(null, /*! ./src/pages/forgot */ "./resources/js/src/pages/forgot/index.js"));
+      return __webpack_require__.e(/*! import() */ 4).then(__webpack_require__.bind(null, /*! ./src/pages/forgot */ "./resources/js/src/pages/forgot/index.js"));
     })
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(AppRoute, {
     fullLayout: true,

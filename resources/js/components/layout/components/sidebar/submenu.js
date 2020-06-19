@@ -32,7 +32,7 @@ export default function SubMenu(props){
             >
                 {items.map((item, index) => (
                     <NavItem key={index} className="pl-4">
-                        <NavLink tag={Link} to={item.target}>
+                        <NavLink tag={Link} to={item.route}>
                             {item.title}
                         </NavLink>
                     </NavItem>
