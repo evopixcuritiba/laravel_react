@@ -1,10 +1,6 @@
 import React, {lazy, Suspense} from 'react';
 import ReactDOM from 'react-dom';
-
 import Spinner from './components/spinner'
-
-import {Layout} from './components/context/layout_context'
-
 const LazyApp = lazy(() => import("./react_app"))
 
 import "./src/styles/global.scss"
@@ -26,9 +22,7 @@ import "./src/styles/global.scss"
 if (document.getElementById('root')) {
     ReactDOM.render(
         <Suspense fallback={<Spinner />}>
-            <Layout>
-                <LazyApp />
-            </Layout>
+            <LazyApp />
         </Suspense>,
     document.getElementById('root'));
 }

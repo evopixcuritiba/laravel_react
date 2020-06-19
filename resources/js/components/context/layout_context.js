@@ -1,3 +1,4 @@
+/*
 import React from 'react'
 
 import FullPageLayout from '../layout/full_layout'
@@ -27,3 +28,7 @@ class Layout extends React.Component {
 }
 
 export {Layout, ContextLayout}
+*/
+/*import React, { createContext } from 'react'
+export const LayoutContext = createContext()
+export const LayoutContextProvider = LayoutContext.Provider*/

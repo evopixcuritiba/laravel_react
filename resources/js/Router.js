@@ -1,11 +1,13 @@
 import React, {Suspense, lazy} from 'react'
 import {Router, Switch, Route} from 'react-router-dom'
 import { history } from './src/services/history'
-import {ContextLayout} from './components/context/layout_context'
+
+import FullPageLayout from './components/layout/full_layout'
+import DefaultLayout from './components/layout/default_layout'
 
 import Spinner from './components/spinner'
 
-const Routeconfig = ({
+const AppRoute = ({
     component: Component,
     isPrivate,
     fullLayout,
@@ -14,27 +16,19 @@ const Routeconfig = ({
     <Route
         {...rest}
         render={props => {
+            let SwitchLayout =
+                fullLayout === true
+                    ? FullPageLayout : DefaultLayout
             return (
-                <ContextLayout.Consumer>
-                    {context => {
-                        let SwitchLayout =
-                            fullLayout === true
-                            ? context.fullLayout : context.defaultLayout
-                        return(
-                            <SwitchLayout {...props}>
-                                <Suspense fallback={<Spinner />}>
-                                    <Component {...props} />
-                                </Suspense>
-                            </SwitchLayout>
-                        )
-                    }}
-                </ContextLayout.Consumer>
+                <SwitchLayout {...props}>
+                    <Suspense fallback={<Spinner />}>
+                        <Component {...props} />
+                    </Suspense>
+                </SwitchLayout>
             )
         }}
     />
 )
-
-const AppRoute = Routeconfig
 
 export default function AppRouter(){
     return (
