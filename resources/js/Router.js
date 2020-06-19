@@ -40,15 +40,15 @@ export default function AppRouter(){
                     () => import('./src/pages/home')
                 )}
                 />
-                <AppRoute isPrivate exact path="/page2" component={lazy(
+                <AppRoute isPrivate path="/page2" component={lazy(
                     () => import('./src/pages/page2')
                 )}
                 />
-                <AppRoute exact fullLayout path="/login" component={lazy(
+                <AppRoute fullLayout path="/login" component={lazy(
                     () => import('./src/pages/login')
                 )}
                 />
-                <AppRoute exact fullLayout path="/forgot" component={lazy(
+                <AppRoute fullLayout path="/forgot" component={lazy(
                     () => import('./src/pages/forgot')
                 )}
                 />

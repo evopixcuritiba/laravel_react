@@ -17,12 +17,27 @@ const menus = [
         icon: faImage,
         children: [
             {
-                route: '/page2',
-                title: 'Pagina 2'
+                route: '/',
+                title: 'Dashboard'
             },
             {
                 route: '/page2',
-                title: 'Pagina 3'
+                title: 'Pagina 2'
+            }
+        ]
+    },
+    {
+        type: 'collapse',
+        title: 'Outro Item',
+        icon: faImage,
+        children: [
+            {
+                route: '/xyz',
+                title: 'Opção'
+            },
+            {
+                route: '/xra',
+                title: 'Opção 2'
             }
         ]
     }

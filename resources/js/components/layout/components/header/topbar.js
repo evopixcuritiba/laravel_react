@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from "react"
+import React, { useState, useContext } from "react"
 
 import {LayoutContext} from '../../../context/layout'
 import {AuthContext} from '../../../context/auth'
@@ -12,14 +12,14 @@ import {
     Collapse,
     Nav,
     NavItem,
-    NavLink,
+    NavLink as NavLinkBootstrap,
     UncontrolledDropdown,
     DropdownToggle,
     DropdownMenu,
     DropdownItem
 } from "reactstrap"
 
-import { Link } from "react-router-dom"
+import { NavLink } from "react-router-dom"
 
 export default function Topbar({ toggleSidebar }){
 
@@ -43,14 +43,14 @@ export default function Topbar({ toggleSidebar }){
             <Collapse isOpen={topbarIsOpen} navbar>
                 <Nav className="ml-auto" navbar>
                     <NavItem>
-                        <NavLink tag={Link} to={"/page-1"}>
-                            Link
-                        </NavLink>
+                        <NavLinkBootstrap exact tag={NavLink} to={"/"} activeClassName="selected">
+                            Home
+                        </NavLinkBootstrap>
                     </NavItem>
                     <NavItem>
-                        <NavLink tag={Link} to={"/page-2"}>
-                            Link
-                        </NavLink>
+                        <NavLinkBootstrap exact tag={NavLink} to={"/page2"} activeClassName="selected">
+                            Page 2
+                        </NavLinkBootstrap>
                     </NavItem>
                     <UncontrolledDropdown nav inNavbar>
                         <DropdownToggle nav>

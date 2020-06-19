@@ -1,18 +1,27 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import classNames from "classnames"
 import {
     Collapse,
     NavItem,
-    NavLink
+    NavLink as NavLinkBootstrap
 } from "reactstrap"
-import { Link } from "react-router-dom"
+import { NavLink, useRouteMatch } from "react-router-dom"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 export default function SubMenu(props){
     const [collapsed, setCollapsed] = useState(true);
     const toggle = () => setCollapsed(!collapsed);
-    const { icon, title, items } = props;
+    const { icon, title, childrens } = props
+    let { path } = useRouteMatch()
+
+    useEffect(() => {
+        childrens.find(el => {
+            if(el.route === path){
+                setCollapsed(!collapsed)
+            }
+        })
+    }, [])
 
     return (
         <div>
@@ -20,21 +29,21 @@ export default function SubMenu(props){
                 onClick={toggle}
                 className={classNames({ "menu-open": !collapsed })}
             >
-                <NavLink className="dropdown-toggle">
+                <NavLinkBootstrap className="dropdown-toggle">
                     <FontAwesomeIcon icon={icon} className="mr-2" />
                     {title}
-                </NavLink>
+                </NavLinkBootstrap>
             </NavItem>
             <Collapse
                 isOpen={!collapsed}
                 navbar
                 className={classNames("items-menu", { "mb-1": !collapsed })}
             >
-                {items.map((item, index) => (
+                {childrens.map((item, index) => (
                     <NavItem key={index} className="pl-4">
-                        <NavLink tag={Link} to={item.route}>
+                        <NavLinkBootstrap exact tag={NavLink} to={item.route} activeClassName="selected">
                             {item.title}
-                        </NavLink>
+                        </NavLinkBootstrap>
                     </NavItem>
                 ))}
             </Collapse>

@@ -39,7 +39,7 @@ export default function SideBar({ isOpen, toggle }){
                                 </NavItem>
                             )
                         }else if(m.type === "collapse"){
-                            return (<SubMenu key={index} title="Home" icon={m.icon} items={m.children} />)
+                            return (<SubMenu key={index} title="Home" icon={m.icon} childrens={m.children} />)
                         }
                     })}
                 </Nav>
