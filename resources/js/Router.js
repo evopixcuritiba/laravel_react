@@ -1,5 +1,5 @@
 import React, {lazy} from 'react'
-import {Router, Switch, Route} from 'react-router-dom'
+import {Router, Switch, Route, Redirect} from 'react-router-dom'
 import { history } from './src/services/history'
 
 import FullPageLayout from './components/layout/full_layout'
@@ -14,9 +14,15 @@ const AppRoute = ({
     <Route
         {...rest}
         render={props => {
-            let SwitchLayout =
-                fullLayout === true
-                    ? FullPageLayout : DefaultLayout
+
+            if(!isSigned && isPrivate){
+                return (<Redirect to={'login'} />)
+            }
+            if (isSigned && !isPrivate) {
+                return <Redirect to={'/'} />
+            }
+
+            let SwitchLayout = fullLayout === true ? FullPageLayout : DefaultLayout
             return (
                 <SwitchLayout {...props}>
                     <Component {...props} />
@@ -30,23 +36,23 @@ export default function AppRouter(){
     return (
         <Router history={history}>
             <Switch>
-                <AppRoute exact path="/" component={lazy(
+                <AppRoute isPrivate exact path="/" component={lazy(
                     () => import('./src/pages/home')
                 )}
                 />
-                <AppRoute path="/page2" component={lazy(
+                <AppRoute isPrivate exact path="/page2" component={lazy(
                     () => import('./src/pages/page2')
                 )}
                 />
-                <AppRoute fullLayout path="/login" component={lazy(
+                <AppRoute exact fullLayout path="/login" component={lazy(
                     () => import('./src/pages/login')
                 )}
                 />
-                <AppRoute fullLayout path="/forgot" component={lazy(
+                <AppRoute exact fullLayout path="/forgot" component={lazy(
                     () => import('./src/pages/forgot')
                 )}
                 />
-                <AppRoute fullLayout path="*" component={lazy(
+                <AppRoute isPrivate fullLayout path="*" component={lazy(
                     () => import('./src/pages/404')
                 )}
                 />

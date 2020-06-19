@@ -36,7 +36,11 @@
         "pusher-js": "^6.0.3",
         "react-bodymovin": "^2.0.0",
         "react-feather": "^2.0.8",
+        "react-hook-form": "^5.7.2",
+        "react-loader-spinner": "^3.1.14",
         "react-router-dom": "^5.2.0",
-        "reactstrap": "^8.4.1"
+        "react-toastify": "^6.0.5",
+        "reactstrap": "^8.4.1",
+        "styled-components": "^5.1.1"
     }
 }

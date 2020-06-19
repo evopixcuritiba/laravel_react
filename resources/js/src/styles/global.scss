@@ -2,6 +2,8 @@
 
 @import '~bootstrap/scss/bootstrap';
 
+@import '~react-toastify/dist/ReactToastify.css';
+
 .App {
     display: flex;
     width: 100%;
@@ -18,14 +20,16 @@ a:focus {
 
 html, body, #root {
     height: 100% !important;
+}
+
+html, body{
     font-family: "Poppins", sans-serif;
     background: #fafafa;
     font-size: 16px;
 }
 
 body.login-page {
-    background-image: url("../assets/images/dot-grid.png");
-    background-repeat: repeat;
+    background: url("../assets/images/dot-grid.png") repeat !important;
 }
 
 /* ---------------------------------------------------
@@ -98,10 +102,10 @@ body.login-page {
 }
 
 .sidebar {
-    max-width: 250px;
+    max-width: 270px;
     background: #fff;
     color: #545454;
-    margin-left: -250px;
+    margin-left: -270px;
     transition: all 0.5s;
     border-right: 1px solid #f3f3f3;
     .nav-item{

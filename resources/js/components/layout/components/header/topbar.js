@@ -1,6 +1,7 @@
 import React, { useState, useContext, useEffect } from "react"
 
 import {LayoutContext} from '../../../context/layout'
+import {AuthContext} from '../../../context/auth'
 
 import * as Icon from 'react-feather'
 
@@ -23,6 +24,7 @@ import { Link } from "react-router-dom"
 export default function Topbar({ toggleSidebar }){
 
     let layoutContext = useContext(LayoutContext)
+    let auth = useContext(AuthContext)
 
     const [topbarIsOpen, setTopbarOpen] = useState(false);
     const toggleTopbar = () => setTopbarOpen(!topbarIsOpen);
@@ -52,7 +54,7 @@ export default function Topbar({ toggleSidebar }){
                     </NavItem>
                     <UncontrolledDropdown nav inNavbar>
                         <DropdownToggle nav>
-                            Config
+                            {auth.user.name} <Icon.ChevronDown size={16} />
                         </DropdownToggle>
                         <DropdownMenu right>
                             <DropdownItem>
