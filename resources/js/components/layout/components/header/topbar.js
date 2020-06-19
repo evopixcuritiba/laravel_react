@@ -1,6 +1,6 @@
 import React, { useState, useContext, useEffect } from "react"
 
-import {SidebarContext} from '../../../context/sidebar_context'
+import {LayoutContext} from '../../../context/layout'
 
 import * as Icon from 'react-feather'
 
@@ -22,7 +22,7 @@ import { Link } from "react-router-dom"
 
 export default function Topbar({ toggleSidebar }){
 
-    let sidebarContext = useContext(SidebarContext)
+    let layoutContext = useContext(LayoutContext)
 
     const [topbarIsOpen, setTopbarOpen] = useState(false);
     const toggleTopbar = () => setTopbarOpen(!topbarIsOpen);
@@ -35,7 +35,7 @@ export default function Topbar({ toggleSidebar }){
             expand="md"
         >
             <Button className={'btn-toggle-side'} onClick={toggleSidebar}>
-                {sidebarContext.sidebarIsOpen ? (<Icon.Sidebar />) : (<Icon.ArrowRight />)}
+                {layoutContext.sidebarIsOpen ? (<Icon.Sidebar />) : (<Icon.ArrowRight />)}
             </Button>
             <NavbarToggler className={'btn-toggle-side'} onClick={toggleTopbar} />
             <Collapse isOpen={topbarIsOpen} navbar>
