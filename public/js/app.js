@@ -69930,8 +69930,8 @@ try {
 window.Pusher = __webpack_require__(/*! pusher-js */ "./node_modules/pusher-js/dist/web/pusher.js");
 window.Echo = new laravel_echo__WEBPACK_IMPORTED_MODULE_0__["default"]({
   broadcaster: 'pusher',
-  key: "7fc8b3f27270db7def07",
-  cluster: "us2",
+  key: "",
+  cluster: "mt1",
   forceTLS: true
 });
 
@@ -70039,7 +70039,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var LazyApp = /*#__PURE__*/Object(react__WEBPACK_IMPORTED_MODULE_0__["lazy"])(function () {
-  return Promise.all(/*! import() */[__webpack_require__.e(1), __webpack_require__.e(2)]).then(__webpack_require__.bind(null, /*! ./react_app */ "./resources/js/react_app.js"));
+  return Promise.all(/*! import() */[__webpack_require__.e(4), __webpack_require__.e(6)]).then(__webpack_require__.bind(null, /*! ./react_app */ "./resources/js/react_app.js"));
 });
 Echo.join('demo-channel').here(function (users) {
   console.log('here:', users);
@@ -70059,26 +70059,14 @@ if (document.getElementById('root')) {
 
 /***/ }),
 
-/***/ "./resources/sass/app.scss":
-/*!*********************************!*\
-  !*** ./resources/sass/app.scss ***!
-  \*********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
 /***/ 0:
-/*!*************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/sass/app.scss ***!
-  \*************************************************************/
+/*!***********************************!*\
+  !*** multi ./resources/js/app.js ***!
+  \***********************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! D:\TIAGO\GITHUB\laravel_react\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! D:\TIAGO\GITHUB\laravel_react\resources\sass\app.scss */"./resources/sass/app.scss");
+module.exports = __webpack_require__(/*! F:\EVOPIX\laravel_react\resources\js\app.js */"./resources/js/app.js");
 
 
 /***/ })
