@@ -1,32 +1,19 @@
-import React, {lazy, Suspense} from 'react';
-import ReactDOM from 'react-dom';
-
+import React, {Suspense} from 'react'
+import ReactDOM from 'react-dom'
+import { ToastContainer } from 'react-toastify'
 import Spinner from './components/spinner'
+import Router from "./Router"
+import AuthContextProvider from './components/context/auth'
 
-import Layout from './components/layout'
-
-const LazyApp = lazy(() => import("./react_app"))
-
-Echo.join('demo-channel')
-    .here((users) => {
-        console.log('here:', users)
-    })
-    .leaving((user) => {
-        console.log('leaving:', user)
-    })
-    .joining((user) => {
-        console.log('joining:', user)
-    })
-    .listen('PushTest', (e) => {
-        console.log(e)
-    });
+import "./src/styles/global.scss"
 
 if (document.getElementById('root')) {
     ReactDOM.render(
         <Suspense fallback={<Spinner />}>
-            <Layout>
-                <LazyApp />
-            </Layout>
+            <AuthContextProvider>
+                <ToastContainer autoClose={3000} />
+                <Router />
+            </AuthContextProvider>
         </Suspense>,
     document.getElementById('root'));
 }

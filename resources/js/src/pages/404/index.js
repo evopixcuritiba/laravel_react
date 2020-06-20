@@ -1,9 +1,9 @@
 import React from 'react'
 import ReactBodymovin from 'react-bodymovin'
-import lottie404 from '../../components/animations/7774-loading.json'
+import lottie404 from '../../../components/animations/404.json'
 import {Col, Container, Row} from "reactstrap"
 
-export default function Spinner(){
+export default function Page404(){
     const bodyMovieOptions = {
         loop: true,
         autoplay: true,
@@ -13,7 +13,7 @@ export default function Spinner(){
     return (
         <Container className={'h-100'}>
             <Row className={'h-100 justify-content-center align-items-center'}>
-                <Col md={3}>
+                <Col md={6}>
                     <ReactBodymovin options={bodyMovieOptions} />
                 </Col>
             </Row>

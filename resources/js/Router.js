@@ -1,37 +1,59 @@
-import React, {Suspense, lazy} from 'react'
-import {Router, Switch, Route} from 'react-router-dom'
+import React, {lazy} from 'react'
+import {Router, Switch, Route, Redirect} from 'react-router-dom'
 import { history } from './src/services/history'
 
-import Spinner from './components/spinner'
+import FullPageLayout from './components/layout/full_layout'
+import DefaultLayout from './components/layout/default_layout'
 
-const Routeconfig = ({
+const AppRoute = ({
     component: Component,
+    isPrivate,
+    fullLayout,
     ...rest
 }) => (
     <Route
         {...rest}
         render={props => {
+
+            if(!isSigned && isPrivate){
+                return (<Redirect to={'login'} />)
+            }
+            if (isSigned && !isPrivate) {
+                return <Redirect to={'/'} />
+            }
+
+            let SwitchLayout = fullLayout === true ? FullPageLayout : DefaultLayout
             return (
-                <Suspense fallback={<Spinner />}>
+                <SwitchLayout {...props}>
                     <Component {...props} />
-                </Suspense>
+                </SwitchLayout>
             )
         }}
     />
 )
 
-const AppRoute = Routeconfig
-
 export default function AppRouter(){
     return (
         <Router history={history}>
             <Switch>
-                <AppRoute exact path="/" component={lazy(
+                <AppRoute isPrivate exact path="/" component={lazy(
                     () => import('./src/pages/home')
                 )}
                 />
-                <AppRoute path="/page2" component={lazy(
+                <AppRoute isPrivate path="/page2" component={lazy(
                     () => import('./src/pages/page2')
+                )}
+                />
+                <AppRoute fullLayout path="/login" component={lazy(
+                    () => import('./src/pages/login')
+                )}
+                />
+                <AppRoute fullLayout path="/forgot" component={lazy(
+                    () => import('./src/pages/forgot')
+                )}
+                />
+                <AppRoute isPrivate fullLayout path="*" component={lazy(
+                    () => import('./src/pages/404')
                 )}
                 />
             </Switch>
