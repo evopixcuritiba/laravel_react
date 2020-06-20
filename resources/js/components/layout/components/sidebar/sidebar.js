@@ -5,12 +5,12 @@ import menuconfig, {subtitle} from '../../../../src/configs/side_menu'
 
 import {
     NavItem,
-    NavLink,
+    NavLink as NavLinkBootstrap,
     Nav
 } from "reactstrap"
 
 import classNames from "classnames"
-import { Link } from "react-router-dom"
+import { NavLink } from "react-router-dom"
 
 import SubMenu from "./submenu"
 
@@ -32,10 +32,10 @@ export default function SideBar({ isOpen, toggle }){
                         if(m.type === "nav"){
                             return (
                                 <NavItem key={index}>
-                                    <NavLink tag={Link} to={m.route}>
+                                    <NavLinkBootstrap exact tag={NavLink} to={m.route} activeClassName="selected">
                                         <FontAwesomeIcon icon={m.icon} className="mr-2" />
                                         {m.title}
-                                    </NavLink>
+                                    </NavLinkBootstrap>
                                 </NavItem>
                             )
                         }else if(m.type === "collapse"){
